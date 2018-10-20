@@ -25,12 +25,13 @@ SECRET_KEY = 'y@!m+-p$qoao*s_-hfe0hvmv6rqonlbz&^eq*o684#s%a)ubqn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bookmarks.pythonanywhere.com"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'bookmark.apps.BookmarkConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'live.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +119,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = "/home/bookmarks/my-first-blog/static"
+LOGIN_REDIRECT_URL = '/'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SECURE_SSL_REDIRECT = True
+
+
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "manthansmanthan@gmail.com"
+EMAIL_HOST_PASSWORD = '.swillconnect'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+
+
+
+
+
+
